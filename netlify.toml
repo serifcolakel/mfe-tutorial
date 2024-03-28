@@ -4,3 +4,9 @@
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "https://relaxed-mochi-7581fa.netlify.app"
+
+# _redirects
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
