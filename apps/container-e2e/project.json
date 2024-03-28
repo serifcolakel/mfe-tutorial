@@ -1,0 +1,34 @@
+{
+  "name": "container-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/container-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/container-e2e/cypress.config.ts",
+        "devServerTarget": "container:serve:development",
+        "testingType": "e2e",
+        "baseUrl": "http://localhost:3000"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "container:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "container:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/container-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["container"]
+}
