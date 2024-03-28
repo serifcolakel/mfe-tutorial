@@ -1,0 +1,6 @@
+# netlify.toml
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://relaxed-mochi-7581fa.netlify.app"
