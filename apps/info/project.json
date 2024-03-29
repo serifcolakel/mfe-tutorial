@@ -19,7 +19,8 @@
         "styles": ["apps/info/src/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "apps/info/webpack.config.ts"
+        "webpackConfig": "apps/info/webpack.config.ts",
+        "postcssConfig": "apps/info/postcss.config.js"
       },
       "configurations": {
         "development": {
