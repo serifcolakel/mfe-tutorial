@@ -11,10 +11,10 @@ const socialLinks = [
 
 export default function SocialLinks() {
   return (
-    <div className="flex flex-row divide-x-2 md:w-1/3 w-full divide-black justify-center items-center border py-4 rounded-lg bg-white">
+    <div className="flex flex-row items-center justify-center w-full py-4 bg-white border divide-x-2 divide-black rounded-lg md:w-1/3">
       {socialLinks.map(({ name, url }) => (
         <a
-          className="px-4 hover:underline text-primary-400 text-xl"
+          className="px-4 text-xl hover:underline text-primary-400"
           href={url}
           key={name}
           rel="noreferrer"
