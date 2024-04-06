@@ -1,3 +1,5 @@
+import { ContextMenuDemo } from '../components/context-menu';
+
 export function App() {
   return (
     <main>
@@ -11,6 +13,7 @@ export function App() {
           This app is a remote app that is part of the Nx plugin for Webpack 5.
         </p>
       </section>
+      <ContextMenuDemo />
     </main>
   );
 }

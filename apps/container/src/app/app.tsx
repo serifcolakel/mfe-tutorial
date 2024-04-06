@@ -42,6 +42,8 @@ export function App() {
           Info
         </NavLink>
         <Button>Click Me</Button>
+        <Button variant="destructive">Click Me</Button>
+        <Button variant="secondary">Click Me</Button>
       </nav>
       <Routes>
         <Route element={<HomePage />} path="/" />

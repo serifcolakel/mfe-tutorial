@@ -1,3 +1,4 @@
+import { HoverCardDemo } from '../../components/hover-card';
 import SocialLinks from '../../components/social-links';
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
       <p className="text-lg text-gray-400">
         It was created with the Nx plugin for Webpack 5.
       </p>
+      <HoverCardDemo />
       <SocialLinks />
     </div>
   );

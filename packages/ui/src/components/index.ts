@@ -1,1 +1,1 @@
-export { default as Button, type BaseButtonProps } from './button';
+export * from './ui';
