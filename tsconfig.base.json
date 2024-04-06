@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mfe-tutorial/ui": ["packages/ui/src/index.ts"],
       "info/InfoContainer": ["apps/info/src/app/app"]
     }
   },

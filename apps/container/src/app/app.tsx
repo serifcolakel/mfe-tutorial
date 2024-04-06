@@ -1,3 +1,4 @@
+import { Button } from '@mfe-tutorial/ui';
 import * as React from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 
@@ -40,6 +41,7 @@ export function App() {
         >
           Info
         </NavLink>
+        <Button>Click Me</Button>
       </nav>
       <Routes>
         <Route element={<HomePage />} path="/" />
