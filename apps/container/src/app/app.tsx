@@ -1,55 +1,14 @@
-import { Button } from '@mfe-tutorial/ui';
-import * as React from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Loader } from 'lucide-react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const HomePage = React.lazy(() => import('../pages/home'));
-const Info = React.lazy(() => import('info/InfoContainer'));
+import { routes } from '../routes';
 
 export function App() {
   return (
-    <React.Suspense fallback={null}>
-      <nav
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexDirection: 'row',
-          gap: '2rem',
-          margin: '1rem',
-        }}
-      >
-        <NavLink
-          style={({ isActive }) => ({
-            backgroundColor: isActive ? 'lightblue' : 'blue',
-            padding: '0.5rem',
-            borderRadius: '0.5rem',
-            textDecoration: 'none',
-            color: 'white',
-          })}
-          to="/"
-        >
-          Home
-        </NavLink>
-        <NavLink
-          style={({ isActive }) => ({
-            backgroundColor: isActive ? 'lightblue' : 'blue',
-            padding: '0.5rem',
-            borderRadius: '0.5rem',
-            textDecoration: 'none',
-            color: 'white',
-          })}
-          to="/info"
-        >
-          Info
-        </NavLink>
-        <Button>Click Me</Button>
-        <Button variant="destructive">Click Me</Button>
-        <Button variant="secondary">Click Me</Button>
-      </nav>
-      <Routes>
-        <Route element={<HomePage />} path="/" />
-        <Route element={<Info />} path="/info" />
-      </Routes>
-    </React.Suspense>
+    <RouterProvider
+      fallbackElement={<Loader className="animate-spin" size="4rem" />}
+      router={createBrowserRouter(routes)}
+    />
   );
 }
 
