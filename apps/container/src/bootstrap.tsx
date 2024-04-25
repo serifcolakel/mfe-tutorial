@@ -1,6 +1,7 @@
+import { DataLayerProviders } from '@mfe-tutorial/data';
+import { Toaster } from '@mfe-tutorial/ui';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 
 import App from './app/app';
 
@@ -14,8 +15,9 @@ const root = ReactDOM.createRoot(element);
 
 root.render(
   <StrictMode>
-    <BrowserRouter>
+    <DataLayerProviders>
+      <Toaster />
       <App />
-    </BrowserRouter>
+    </DataLayerProviders>
   </StrictMode>
 );

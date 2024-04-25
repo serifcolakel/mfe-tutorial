@@ -1,13 +1,12 @@
-# Shared UI Setup For Micro Frontend Application (Module Federation with React) with Nx Workspace
+# Shared Data-Layer Setup For Micro Frontend Application with Nx Workspace
 
-This tutorial will guide you through setting up a shared `UI library` for a `Micro Frontend Application` using Nx Workspace, React, and Tailwind CSS. We will use `Shadcn UI` for the UI components.
+This tutorial will guide
 
 ## Link for Final Implementation
 
 The final implementation of the tutorial can be found in the following repository commits:
 
-- [Add UI package with Shadcn components and use them on apps](https://github.com/serifcolakel/mfe-tutorial/commit/5704168095b2c83b8b51823ed585a1cdf3210dbc)
-- [Add UI package with Button component and update dependencies](https://github.com/serifcolakel/mfe-tutorial/commit/cafa9a12f9c95a9a1536ff4e11c2a2008a3d89a5)
+-
 
 > Live Demo: [Micro Frontend Application with Nx Workspace](https://relaxed-mochi-7581fa.netlify.app/)
 
@@ -29,34 +28,37 @@ Before we begin, make sure you have the following things set up:
 
 ## Table of Contents
 
-- [Create UI Library](#create-ui-library)
-- [Add Tailwind CSS Setup](#add-tailwind-css-setup)
-- [Shadcn UI Setup](#shadcn-ui-setup)
-  - [Add Button Component](#add-button-component)
-  - [Add Shadcn UI Hover Card](#add-shadcn-ui-hover-card)
-  - [Add Shadcn UI Badge](#add-shadcn-ui-badge)
-- [Conclusion](#conclusion)
+- [Create React Library](#create-react-library)
 
-## Create UI Library
+## Create React Library
 
-First, we need to create a UI library using the Nx Workspace. We will use the `@nx/react:library` generator to create the UI library.
+First, we need to create a React library using the Nx Workspace. We will use the `@nx/react:library` generator to create the React library.
 
 > With Script
 
 ```bash
-pnpm exec nx generate @nx/react:library --name=ui --bundler=vite --directory=packages/ui --projectNameAndRootFormat=as-provided --no-interactive
+pnpm exec nx generate @nx/react:library --name=data --bundler=vite --directory=apps/data --projectNameAndRootFormat=as-provided --no-interactive --dry-run
 ```
+
+The Scripts are explained below:
+
+- **--name** : The name of the library. In this case, we are naming it `data`.
+- **--bundler** : The bundler to use for the library. In this case, we are using `vite`.
+- **--directory** : The directory where the library will be created. In this case, we are creating it in the `apps/data` directory.
+- **--projectNameAndRootFormat** : The format to use for the project name and root. In this case, we are using `as-provided`.
+- **--no-interactive** : Disable interactive prompts.
+- **--dry-run** : Show what will be generated without actually generating it.
 
 > With Nx Console
 
 ![Nx Console](https://i.hizliresim.com/przb27y.png)
 
-## Add Tailwind CSS Setup
+## Add Services For Data Layer
 
-Next, we need to add the Tailwind CSS setup to the UI library. We will use the `@nx/react:setup-tailwind` generator to add the Tailwind CSS setup.
+Next, we need to add the services for the data layer in the `data` library. We will create a `data` service that fetches data from an API.
 
 ```bash
-pnpm exec nx generate @nx/react:setup-tailwind --project=ui --no-interactive
+pnpm add axios
 ```
 
 - **Configure Tailwind Config** : Update the `packages/ui/tailwind.config.js` file with the following content:

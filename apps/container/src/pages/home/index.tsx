@@ -1,3 +1,6 @@
+import { paths } from '@mfe-tutorial/data';
+import { NavLink } from 'react-router-dom';
+
 import { HoverCardDemo } from '../../components/hover-card';
 import SocialLinks from '../../components/social-links';
 
@@ -5,6 +8,9 @@ export default function HomePage() {
   return (
     <div className="h-[90vh] flex flex-col justify-center items-center bg-gray-100 gap-y-4 w-full">
       <p className="text-[200px] animate-wiggle">🌍</p>
+      <NavLink className="text-lg text-blue-500" to={paths.login}>
+        Go to the Login App
+      </NavLink>
       <h1 className="text-4xl font-bold text-primary">
         Welcome to the Container!
       </h1>

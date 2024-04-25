@@ -43,6 +43,15 @@
           "extractLicenses": true,
           "vendorChunk": false,
           "webpackConfig": "apps/info/webpack.config.prod.ts"
+        },
+        "custom": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/info/webpack.config.custom.ts"
         }
       }
     },
@@ -60,6 +69,10 @@
         },
         "production": {
           "buildTarget": "info:build:production",
+          "hmr": false
+        },
+        "custom": {
+          "buildTarget": "info:build:custom",
           "hmr": false
         }
       }
@@ -85,6 +98,9 @@
         },
         "production": {
           "buildTarget": "info:build:production"
+        },
+        "custom": {
+          "buildTarget": "info:build:custom"
         }
       }
     },
